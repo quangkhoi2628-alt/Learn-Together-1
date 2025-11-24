@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Flashcard, Grade, Subject, PracticeQuestion, OpenEndedQuestion, OpenEndedFeedback, StudyDay, WeeklyPlan } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY as string });
 
 // Helper to handle API errors, especially for quota issues.
 const handleGeminiError = (error: unknown, defaultMessage: string): string => {
